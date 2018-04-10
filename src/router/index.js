@@ -31,7 +31,7 @@ const router = new Router({
       ]
     },
     {
-      path: '/component',
+      path: '/components',
       component: Layout,
       name: '组件',
       redirect: '/components/index',
@@ -58,7 +58,7 @@ const router = new Router({
       redirect: '/table/index',
       children: [
         { path: 'index', component: TableHome, name: '表格简述' },
-        { path: 'table-example', component: TableExample, name: '表格实例' }
+        { path: 'example', component: TableExample, name: '表格实例' }
       ]
     },
     { path: '*', component: Layout, redirect: '/dashboard' }

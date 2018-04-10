@@ -4,11 +4,11 @@ const cors = require('koa2-cors')
 const bodyParser = require('koa-bodyparser')
 const jwt = require('koa-jwt')
 const jsonwebtoken = require('jsonwebtoken')
-const secret = require('./jwt/secret.js')
+const secret = require('./secret/secret.js')
 
 const router = new Router()
 router.post('/api/login', async (ctx, next) => {
-  const userDataList = require('./login/user.js')
+  const userDataList = require('./user/user.js')
   const params = ctx.request.body
   const username = params.username || ''
   const password = params.password || ''
@@ -61,7 +61,7 @@ router.post('/api/logout', async (ctx, next) => {
   }
 })
 router.get('/api/menu', async (ctx, next) => {
-  const menu = require('./menu/menu')
+  const menu = require('./menu/menu.js')
   console.log('获取菜单\n')
   ctx.body = menu
 })

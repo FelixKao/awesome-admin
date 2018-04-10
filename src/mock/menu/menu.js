@@ -23,7 +23,7 @@ module.exports = [
     title: '表格',
     menus: [
       { index: '/table/index', title: '表格简述' },
-      { idnex: '/table/table-example', title: '表格实例' }
+      { index: '/table/example', title: '表格实例' }
     ]
   }
 ]

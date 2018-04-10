@@ -10,5 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="sass" scoped>
+#app
+  width: 100%
+  height: 100vh
 </style>

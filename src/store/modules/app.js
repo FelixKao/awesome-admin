@@ -13,10 +13,10 @@ const getters = {
 }
 
 const actions = {
-  toggleSidebar ({commit}) {
+  toggleSidebar ({ commit }) {
     commit(types.TOGGLE_SIDEBAR)
   },
-  addVisitedViews ({commit}, view) {
+  addVisitedViews ({ commit }, view) {
     commit(types.ADD_VISITED_VIEWS, view)
   },
   delVisitedViews ({ commit, state }, view) {
@@ -25,7 +25,7 @@ const actions = {
       resolve([...state.visitedViews])
     })
   },
-  clearVisitedViews ({commit}) {
+  clearVisitedViews ({ commit }) {
     commit(types.CLEAR_VISITED_VIEWS)
   }
 }
@@ -34,7 +34,7 @@ const mutations = {
   [types.TOGGLE_SIDEBAR] (state) {
     state.isSidebarCollapse = !state.isSidebarCollapse
   },
-  [types.DEL_VISITED_VIEWS] (state, view) {
+  [types.ADD_VISITED_VIEWS] (state, view) {
     let views = state.visitedViews
     const isVisited = views.some(v => v.path === view.path)
     if (!isVisited) {
@@ -50,7 +50,7 @@ const mutations = {
     let views = state.visitedViews
     for (let i = 0, len = views.length; i < len; i++) {
       if (views[i].path === view.path) {
-        view.splice(i, 1)
+        views.splice(i, 1)
         break
       }
     }
